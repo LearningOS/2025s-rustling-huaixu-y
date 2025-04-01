@@ -5,16 +5,14 @@
 // Execute `rustlings hint clippy3` or use the `hint` watch subcommand for a hint.
 
 #[allow(unused_variables, unused_assignments)]
-#[allow(clippy::let_unit_value)]
-#[allow(clippy::unnecessary_literal_unwrap)]
 fn main() {
     let my_option: Option<()> = None;
-    my_option.unwrap();
 
-    let my_arr = &[-1, -2, -3 - 4, -5, -6];
+    let my_arr = &[-1, -2, -3, -4, -5, -6];
     println!("My array! Here it is: {:?}", my_arr);
 
-    let my_empty_vec = vec![1, 2, 3, 4, 5].resize(0, 5);
+    let mut my_empty_vec = vec![1, 2, 3, 4, 5];
+    my_empty_vec.clear();
     println!("This Vec is empty, see? {:?}", my_empty_vec);
 
     let mut value_a = 45;
