@@ -71,9 +71,7 @@ impl<T> LinkedList<T> {
             },
         }
     }
-}
 
-impl<T: std::fmt::Display> LinkedList<T> {
     pub fn reverse(&mut self) {
         if self.start == None || self.start == self.end {
             return;
