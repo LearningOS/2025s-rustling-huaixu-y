@@ -82,7 +82,6 @@ impl<T: std::fmt::Display> LinkedList<T> {
         let mut prev = None;
         let mut curr = self.start.take();
         while let Some(node_ptr) = curr {
-            self.start = curr;
             unsafe {
                 let mut node = Box::from_raw(node_ptr.as_ptr());
                 curr = node.next.take();
@@ -91,6 +90,7 @@ impl<T: std::fmt::Display> LinkedList<T> {
                 prev = Some(NonNull::new_unchecked(Box::into_raw(node)));
             }
         }
+        self.start = prev;
     }
 }
 
